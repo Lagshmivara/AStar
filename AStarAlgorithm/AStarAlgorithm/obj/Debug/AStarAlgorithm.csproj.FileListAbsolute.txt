@@ -1,0 +1,5 @@
+C:\Users\Elen\Documents\Visual Studio 2015\AStarAlgorithm\AStarAlgorithm\bin\Debug\AStarAlgorithm.exe.config
+C:\Users\Elen\Documents\Visual Studio 2015\AStarAlgorithm\AStarAlgorithm\bin\Debug\AStarAlgorithm.exe
+C:\Users\Elen\Documents\Visual Studio 2015\AStarAlgorithm\AStarAlgorithm\bin\Debug\AStarAlgorithm.pdb
+C:\Users\Elen\Documents\Visual Studio 2015\AStarAlgorithm\AStarAlgorithm\obj\Debug\AStarAlgorithm.exe
+C:\Users\Elen\Documents\Visual Studio 2015\AStarAlgorithm\AStarAlgorithm\obj\Debug\AStarAlgorithm.pdb
