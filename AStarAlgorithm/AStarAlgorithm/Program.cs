@@ -36,7 +36,7 @@ namespace AStarAlgorithm
 
             SetCell.SetDoughterCells(nodeArray, OpenNodeList, CloseNodeLIst, x1, y1, x2, y2);//определили дочерние 
                                                                                      //точки начального узла
-            CloseNodeLIst.Add(nodeArray.Arr[x1, y1]);//добавляем ее в закрытый
+            CloseNodeLIst.Add(nodeArray.Arr[y1, x1]);//добавляем ее в закрытый
 
             while (!OpenNodeList.Contains(nodeArray.Arr[y2, x2]))
             {
@@ -59,6 +59,7 @@ namespace AStarAlgorithm
             while (temp != null)
             {
                 temp.IsWalkable = 2;
+                //nodeArray.ShowArray();
                 temp = temp.Parent;
             }
             nodeArray.ShowArray();

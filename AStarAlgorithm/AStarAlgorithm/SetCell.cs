@@ -20,11 +20,11 @@ namespace AStarAlgorithm
                 {
                     //проверяем, что х и у допустмы, и исключаем случай, 
                     //когда мы остаемся в стартовой точке, и элемент содержится в закрытом листе 
-                    if (x + helper[i] < Math.Sqrt(nodeArray.Arr.Length) && x + helper[i] >= 0 && y + helper[j] >= 0 &&
-                        y + helper[j] < Math.Sqrt(nodeArray.Arr.Length) &&
+                    if (x + helper[i] < nodeArray.N && x + helper[i] >= 0 && y + helper[j] >= 0 &&
+                        y + helper[j] < nodeArray.N &&
                         nodeArray.Arr[y + helper[j], x + helper[i]].IsWalkable == 0 &&
                         nodeArray.Arr[y, x] != nodeArray.Arr[y + helper[j], x + helper[i]] &&
-                        !closedList.Contains(nodeArray.Arr[y + helper[j], x + helper[i]]))
+                        !closedList.Contains(nodeArray.Arr[y + helper[j], x + helper[i]]) && Math.Abs(helper[i]) != Math.Abs(helper[j]))
                     {
                         if (!openList.Contains(nodeArray.Arr[y + helper[j], x + helper[i]]))
                         {
@@ -32,18 +32,17 @@ namespace AStarAlgorithm
                             openList.Add(nodeArray.Arr[y + helper[j], x + helper[i]]);
                             nodeArray.Arr[y + helper[j], x + helper[i]].Parent = nodeArray.Arr[y, x];
                             //задаем значение G и H
-                            if (Math.Abs(helper[i]) == Math.Abs(helper[j])) nodeArray.Arr[y + helper[j], x + helper[i]].G = nodeArray.Arr[y, x].G + 14;
-                            else nodeArray.Arr[y + helper[j], x + helper[i]].G = 10;
+                            nodeArray.Arr[y + helper[j], x + helper[i]].G = nodeArray.Arr[y,x].G + 10;
                             nodeArray.Arr[y + helper[j], x + helper[i]].H = 10 * (Math.Abs(x2 - x - helper[i]) + Math.Abs(y2 - y - helper[j]));
                         }
-                        else
+                        /*else
                         {
-                            if (nodeArray.Arr[y + helper[j], x + helper[i]].G > nodeArray.Arr[y, x].G + (Math.Abs(helper[i]) == Math.Abs(helper[j]) ? 14 : 10))
+                            if (nodeArray.Arr[y + helper[j], x + helper[i]].G > nodeArray.Arr[y, x].G + 10)
                             {
                                 nodeArray.Arr[y + helper[j], x + helper[i]].Parent = nodeArray.Arr[y, x];
-                                nodeArray.Arr[y + helper[j], x + helper[i]].G = nodeArray.Arr[y, x].G + (Math.Abs(helper[i]) == Math.Abs(helper[j]) ? 14 : 10);
+                                nodeArray.Arr[y + helper[j], x + helper[i]].G = nodeArray.Arr[y, x].G + 10;
                             }
-                        }
+                        }*/
 
                     }
 

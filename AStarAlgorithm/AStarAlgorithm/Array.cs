@@ -8,7 +8,7 @@ namespace AStarAlgorithm
 {
     class Array
     {
-        int N { get; set; }
+        public int N { get; set; }
         Random rand = new Random();
         public Node[,] Arr { get; set; }
 
@@ -37,7 +37,7 @@ namespace AStarAlgorithm
                     arrSum++;
                 }
 
-            } while (arrSum < 0.5 * n * n);
+            } while (arrSum < 0.4 * n * n);
         }
 
         public void ShowArray()

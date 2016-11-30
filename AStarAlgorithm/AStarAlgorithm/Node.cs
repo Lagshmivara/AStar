@@ -15,6 +15,6 @@ namespace AStarAlgorithm
         public float G { get; set; }
         public float H { get; set; }
         public float F { get { return this.G + this.H; } }
-        public Node Parent;
+        public Node Parent = null;
     }
 }
